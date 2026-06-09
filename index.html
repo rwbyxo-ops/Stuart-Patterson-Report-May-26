@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuart Patterson Lodge - Maintenance Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background-color: #F8FAFC; font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; color: #0F172A; }
+        .chart-container { position: relative; width: 100%; max-width: 100%; margin: 0 auto; height: 350px; max-height: 450px; }
+        @media (min-width: 768px) { .chart-container { height: 450px; } }
+        .kpi-card { background-color: #ffffff; border-top: 4px solid #3B82F6; }
+    </style>
+</head>
+<body class="antialiased pb-12">
+
+    <header class="bg-[#0F172A] text-white py-12 px-6 shadow-md mb-8">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2 tracking-tight">Stuart Patterson Lodge CTS 31250</h1>
+            <h2 class="text-2xl text-blue-300 font-semibold mb-2">Village Maintenance & Condition Report</h2>
+            <p class="text-sm text-slate-400 mb-6 flex items-center">
+                <span class="mr-2 text-lg">&#128205;</span> 1 Wellington Street, Brassall QLD 4305
+            </p>
+            <p class="text-lg text-blue-100 max-w-4xl leading-relaxed border-t border-slate-700 pt-4">
+                Visual inspection analysis covering residential blocks and communal infrastructure. This report displays 250 logged photographic records to identify outstanding maintenance requirements within the scheme.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8">
+
+        <section class="md:col-span-12 mb-4">
+            <h2 class="text-2xl font-bold text-[#0F172A] mb-2 border-b-2 border-blue-100 pb-2">Inspection Overview</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-6">
+                <div class="kpi-card shadow-md rounded-lg p-4 flex flex-col justify-center items-center text-center">
+                    <span class="text-4xl font-extrabold text-[#3B82F6] mb-2">250</span><span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Total Logs</span>
+                </div>
+                <div class="kpi-card shadow-md rounded-lg p-4 flex flex-col justify-center items-center text-center border-t-4 border-[#991B1B]">
+                    <span class="text-4xl font-extrabold text-[#991B1B] mb-2">17</span><span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Critical</span>
+                </div>
+                <div class="kpi-card shadow-md rounded-lg p-4 flex flex-col justify-center items-center text-center border-t-4 border-[#EF4444]">
+                    <span class="text-4xl font-extrabold text-[#EF4444] mb-2">99</span><span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">High</span>
+                </div>
+                <div class="kpi-card shadow-md rounded-lg p-4 flex flex-col justify-center items-center text-center border-t-4 border-[#F59E0B]">
+                    <span class="text-4xl font-extrabold text-[#F59E0B] mb-2">92</span><span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Moderate</span>
+                </div>
+                <div class="kpi-card shadow-md rounded-lg p-4 flex flex-col justify-center items-center text-center border-t-4 border-[#10B981]">
+                    <span class="text-4xl font-extrabold text-[#10B981] mb-2">42</span><span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Low / Info</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="md:col-span-12 bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-xl font-bold text-[#0F172A] mb-4 border-b-2 border-slate-100 pb-2">Priority Categorization Metrics</h3>
+            <p class="text-sm text-gray-600 mb-6">Defects logged in this report are assigned a priority level based on the following structural and safety criteria established during the inspection.</p>
+            <div class="flex flex-col gap-4">
+                <div class="border-l-4 border-[#991B1B] bg-slate-50 p-4 rounded-r-lg shadow-sm">
+                    <h4 class="font-bold text-[#991B1B] text-lg">Critical Priority (Immediate Action)</h4>
+                    <p class="text-sm text-gray-700 mt-1"><strong>Criteria:</strong> Exposed structural rebar (risk of concrete cancer/spalling), major soil washout/undermining beneath load-bearing elements, or severe safety/liability hazards (e.g., complete loss of area lighting). Requires immediate isolation and urgent contractor intervention.</p>
+                </div>
+                <div class="border-l-4 border-[#EF4444] bg-slate-50 p-4 rounded-r-lg shadow-sm">
+                    <h4 class="font-bold text-[#EF4444] text-lg">High Priority (Prompt Action)</h4>
+                    <p class="text-sm text-gray-700 mt-1"><strong>Criteria:</strong> Significant structural risk or developing safety hazard. Includes cracks > 5mm in load-bearing posts, cracks > 3mm in slabs, slab separation/subsidence allowing direct water ingress to foundations, and deep asphalt potholes.</p>
+                </div>
+                <div class="border-l-4 border-[#F59E0B] bg-slate-50 p-4 rounded-r-lg shadow-sm">
+                    <h4 class="font-bold text-[#F59E0B] text-lg">Moderate Priority (Scheduled Maintenance)</h4>
+                    <p class="text-sm text-gray-700 mt-1"><strong>Criteria:</strong> Active deterioration that will escalate if ignored. Includes asphalt block cracking (2-3mm), surface raveling, minor soil erosion without immediate structural threat, and moderate concrete spalling.</p>
+                </div>
+                <div class="border-l-4 border-[#10B981] bg-slate-50 p-4 rounded-r-lg shadow-sm">
+                    <h4 class="font-bold text-[#10B981] text-lg">Low Priority (Monitoring / Routine)</h4>
+                    <p class="text-sm text-gray-700 mt-1"><strong>Criteria:</strong> Cosmetic degradation and general wear and tear. Includes hairline shrinkage cracks (< 1.5mm), peeling paint, and minor surface wear. Addressable via standard cyclical maintenance.</p>
+                </div>
+                <div class="border-l-4 border-[#3B82F6] bg-slate-50 p-4 rounded-r-lg shadow-sm">
+                    <h4 class="font-bold text-[#3B82F6] text-lg">Informational (Record Only)</h4>
+                    <p class="text-sm text-gray-700 mt-1"><strong>Criteria:</strong> Not a defect. Logged observations for the committee's record, such as newly installed signage or general environmental conditions. No remedial action required.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DYNAMIC PHOTO GALLERY SECTION -->
+        <section class="md:col-span-12 bg-slate-50 border border-slate-200 rounded-xl shadow-inner p-6 mt-4 mb-4">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-blue-100 pb-4 mb-6">
+                <h3 class="text-2xl font-bold text-[#0F172A]">Complete Defect Photo Log</h3>
+                
+                <div class="mt-4 sm:mt-0 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <!-- Manual Upload Fallback for Desktop Users -->
+                    <div id="local-upload-ui" class="hidden text-sm bg-blue-100 text-blue-800 p-2 rounded flex items-center">
+                        <span class="mr-2">&#128193; Select Amended_Building_Report.csv to load images:</span>
+                        <input type="file" id="csvFileInput" accept=".csv" class="text-xs">
+                    </div>
+                    
+                    <!-- The Filter Dropdown -->
+                    <div class="flex items-center">
+                        <label for="priorityFilter" class="mr-2 text-sm font-bold text-gray-700">Filter:</label>
+                        <select id="priorityFilter" class="p-2 border border-gray-300 rounded shadow-sm text-sm focus:outline-none focus:border-blue-500 bg-white">
+                            <option value="All">View All (250)</option>
+                            <option value="Critical" selected>Critical Only (17)</option>
+                            <option value="High">High Only (99)</option>
+                            <option value="Moderate">Moderate Only (92)</option>
+                            <option value="LowInfo">Low & Informational (42)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="gallery-loading" class="text-center py-12 text-slate-500 font-bold hidden">
+                Loading defect database...
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="photo-gallery">
+                <!-- Javascript will inject the 250 photo cards here -->
+            </div>
+        </section>
+
+        <section class="md:col-span-12 lg:col-span-6 bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-xl font-bold text-[#0F172A] mb-2">Primary Defect Categories</h3>
+            <p class="text-sm text-gray-600 mb-6">Distribution of issues by trade/maintenance category. Foundation and drainage/water issues represent the vast majority of required works.</p>
+            <div class="chart-container" style="height: 350px;"><canvas id="categoryDonutChart"></canvas></div>
+        </section>
+
+        <section class="md:col-span-12 lg:col-span-6 bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-xl font-bold text-[#0F172A] mb-2">Priority Matrix by Trade</h3>
+            <p class="text-sm text-gray-600 mb-6">Cross-references the maintenance category with issue severity. Structural foundations and asphalt pathways represent the bulk of the High and Critical priority works.</p>
+            <div class="chart-container" style="height: 350px;"><canvas id="priorityStackedChart"></canvas></div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- CHART CONFIGURATION ---
+        const rawCategoryLabels = ["Foundation", "Storm Water", "Sewerage", "Asphalt", "Pathway", "Infrastructure", "Other"];
+        const categoryData = [74, 33, 32, 28, 16, 14, 53]; 
+
+        const priorityLabels = ["Foundation", "Storm Water", "Sewerage", "Asphalt", "Pathway", "Infrastructure"];
+        const priorityCriticalData = [4, 0, 0, 0, 8, 0];
+        const priorityHighData = [38, 3, 7, 24, 7, 5];
+        const priorityModData = [30, 14, 20, 4, 0, 5];
+        const priorityLowData = [2, 16, 5, 0, 1, 4];
+
+        function wrapLabel(label) {
+            if (label.length <= 16) return label;
+            let words = label.split(' '), lines = [], currentLine = '';
+            for (let i = 0; i < words.length; i++) {
+                if ((currentLine + words[i]).length > 16) {
+                    if (currentLine.trim() !== '') lines.push(currentLine.trim());
+                    currentLine = words[i] + ' ';
+                } else { currentLine += words[i] + ' '; }
+            }
+            if (currentLine.trim() !== '') lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const customTooltipConfig = { callbacks: { title: function(ti) { let l = ti[0].chart.data.labels[ti[0].dataIndex]; return Array.isArray(l) ? l.join(' ') : l; } } };
+
+        new Chart(document.getElementById('categoryDonutChart').getContext('2d'), {
+            type: 'doughnut',
+            data: { labels: rawCategoryLabels.map(wrapLabel), datasets: [{ data: categoryData, backgroundColor: ['#0F172A', '#3B82F6', '#14B8A6', '#8B5CF6', '#F59E0B', '#EF4444', '#94A3B8'], borderWidth: 2, borderColor: '#ffffff' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } }, tooltip: customTooltipConfig }, cutout: '60%' }
+        });
+
+        new Chart(document.getElementById('priorityStackedChart').getContext('2d'), {
+            type: 'bar',
+            data: { labels: priorityLabels.map(wrapLabel), datasets: [
+                { label: 'Critical', data: priorityCriticalData, backgroundColor: '#991B1B' },
+                { label: 'High', data: priorityHighData, backgroundColor: '#EF4444' },
+                { label: 'Moderate', data: priorityModData, backgroundColor: '#F59E0B' },
+                { label: 'Low', data: priorityLowData, backgroundColor: '#10B981' }
+            ]},
+            options: { responsive: true, maintainAspectRatio: false, plugins: { tooltip: customTooltipConfig, legend: { position: 'top', labels: { boxWidth: 10, font:{size:10} } } }, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true } } }
+        });
+
+
+        // --- DYNAMIC 250 PHOTO GALLERY LOGIC ---
+        let globalGalleryData = [];
+        const galleryContainer = document.getElementById('photo-gallery');
+        const filterDropdown = document.getElementById('priorityFilter');
+        const fileInput = document.getElementById('csvFileInput');
+        const uploadUi = document.getElementById('local-upload-ui');
+
+        // Custom lightweight CSV parser
+        function parseCSV(str) {
+            const result = [];
+            const regex = /(?:\\\"|[^\\\",]+|\"(?:[^\"]|\"\")*\")(?=\,|$)/g;
+            const lines = str.trim().split(/\r?\n/);
+            const headers = lines[0].match(regex).map(h => h.replace(/^\"|\"$/g, '').trim());
+            
+            for (let i = 1; i < lines.length; i++) {
+                if(!lines[i].trim()) continue;
+                const matches = lines[i].match(regex);
+                if(!matches) continue;
+                const obj = {};
+                matches.forEach((val, index) => {
+                    if (headers[index]) {
+                        obj[headers[index]] = val.replace(/^\"|\"$/g, '').replace(/\"\"/g, '"');
+                    }
+                });
+                result.push(obj);
+            }
+            return result;
+        }
+
+        // Renders the specific photos requested by the dropdown
+        function renderGallery(filterValue) {
+            galleryContainer.innerHTML = ''; 
+            if(globalGalleryData.length === 0) return;
+
+            let count = 0;
+            globalGalleryData.forEach(item => {
+                if (filterValue !== 'All') {
+                    if (filterValue === 'LowInfo' && !['Low', 'Informational'].includes(item.Priority)) return;
+                    if (filterValue !== 'LowInfo' && item.Priority !== filterValue) return;
+                }
+
+                let colorClass = 'bg-[#3B82F6]'; 
+                if (item.Priority === 'Critical') colorClass = 'bg-[#991B1B]';
+                if (item.Priority === 'High') colorClass = 'bg-[#EF4444]';
+                if (item.Priority === 'Moderate') colorClass = 'bg-[#F59E0B]';
+                if (item.Priority === 'Low') colorClass = 'bg-[#10B981]';
+
+                const html = `
+                    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden flex items-center justify-center text-center p-4">
+                            <!-- loading="lazy" ensures 250 photos don't freeze the browser! -->
+                            <img loading="lazy" src="./photos/${item.ImageFilename}" alt="${item.Category}" class="w-full h-full object-cover absolute inset-0 z-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="z-0 text-sm font-mono text-slate-500 break-all" style="display:none;">Missing Image:<br>${item.ImageFilename}</div>
+                            <div class="absolute top-2 right-2 ${colorClass} text-white text-xs font-bold px-2 py-1 rounded z-20 shadow">${item.Priority}</div>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col">
+                            <h4 class="font-bold text-[#0F172A] text-sm mb-1">${item.Location}</h4>
+                            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2 block">${item.Category}</span>
+                            <p class="text-xs text-gray-600 line-clamp-3" title="${item.Notes}">${item.Notes}</p>
+                        </div>
+                    </div>
+                `;
+                galleryContainer.insertAdjacentHTML('beforeend', html);
+                count++;
+            });
+            
+            if (count === 0) {
+                galleryContainer.innerHTML = `<div class="col-span-full text-center py-8 text-gray-500">No items found for this filter.</div>`;
+            }
+        }
+
+        // Processes data, sorts it, and calls render
+        function processAndRender(csvString) {
+            globalGalleryData = parseCSV(csvString);
+            const order = { "Critical": 1, "High": 2, "Moderate": 3, "Low": 4, "Informational": 5 };
+            globalGalleryData.sort((a, b) => order[a.Priority] - order[b.Priority]);
+            uploadUi.classList.add('hidden'); // Hide upload button if it was showing
+            renderGallery(filterDropdown.value);
+        }
+
+        // 1. Try to fetch the CSV automatically (Works on Netlify)
+        fetch('Amended_Building_Report.csv')
+            .then(response => {
+                if (!response.ok) throw new Error("Network response was not ok");
+                return response.text();
+            })
+            .then(csvText => processAndRender(csvText))
+            .catch(error => {
+                // 2. If fetch fails (because they double clicked the file locally), show the file upload UI
+                console.log("Local file system detected. Awaiting manual CSV upload.");
+                uploadUi.classList.remove('hidden');
+                galleryContainer.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500 border-2 border-dashed border-slate-300 rounded-lg">Please use the file selector above to load your Amended_Building_Report.csv data.</div>`;
+            });
+
+        // 3. Handle manual file upload if opened locally
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                processAndRender(e.target.result);
+            };
+            reader.readAsText(file);
+        });
+
+        // Handle dropdown changes
+        filterDropdown.addEventListener('change', (e) => renderGallery(e.target.value));
+
+    </script>
+</body>
+</html>
